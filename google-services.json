@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "438317546011",
+    "project_id": "cook-fusion",
+    "storage_bucket": "cook-fusion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438317546011:android:4ce8445fed7e54ec8f56be",
+        "android_client_info": {
+          "package_name": "be.thomasmore.maarten.hens.cookfusion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438317546011-3d1a5r4tbs0jph6dlbrt655ap3k46sr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "be.thomasmore.maarten.hens.cookfusion",
+            "certificate_hash": "34fa4e957765c38f1a735036c22822fadf2a55e3"
+          }
+        },
+        {
+          "client_id": "438317546011-kpgoggkq1vvshjj0e64rt4jor9lf3dnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR1-Y__QTufAPAf9Y4AGdgzVDzbJhu0eI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438317546011-kpgoggkq1vvshjj0e64rt4jor9lf3dnl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

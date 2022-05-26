@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Food Zone
+    </ion-title>
+    <ion-buttons slot='start'>
+      <ion-menu-button menu='side-menu'></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <h1 style=" color: #FF865E; display: flex; align-items: center; justify-content: center;" *ngIf="authService.isLoggedIn()">Welkom {{authService.getDisplayName()}}</h1>
+  <h2 style=" color: #A2D2FF; display: flex; align-items: center; justify-content: center;">Opzoek naar inspiratie?</h2>
+  <div style=" display: flex; align-items: center; justify-content: center;">
+    <app-recipe-item  *ngIf="recipeService.randomRecipe" [recipe]='recipeService.randomRecipe'></app-recipe-item>
+</div>
+</ion-content>

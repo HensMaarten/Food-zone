@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Food Zone
+    </ion-title>
+    <ion-buttons slot='start'>
+      <ion-menu-button menu='side-menu'></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div style="display: flex; align-items: center; justify-content: center;">
+  <ion-list style="width: 850px">
+    <ion-item>
+      <ion-label>Vegan</ion-label>
+      <ion-toggle (ionChange)="veganChange($event)" color="warning"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Glutenvrij</ion-label>
+      <ion-toggle (ionChange)="glutenChange($event)" color="warning"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lactosevrij</ion-label>
+      <ion-toggle (ionChange)="lactoseChange($event)" color="warning"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Bereidingstijd</ion-label>
+      <ion-label>{{initialTimeValue}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{this.minTimeValue}}</ion-label>
+      <ion-range (ionChange)="sliderChange($event)" id="TimeRange" [value]="initialTimeValue" color="warning" [max]="maxTimeValue" [min]="minTimeValue" step="5"></ion-range>
+      <ion-label>{{this.maxTimeValue}}</ion-label>
+    </ion-item>
+  </ion-list>
+  </div>
+      <app-recipe-item style="display: flex; align-items: center; justify-content: center; margin-top: 20px"  *ngFor='let r of recipeList' [recipe]='r'></app-recipe-item>
+
+
+  <ion-infinite-scroll threshold="50px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
