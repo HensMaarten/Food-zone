@@ -1,0 +1,7 @@
+{
+  "name": "Cook Fusion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

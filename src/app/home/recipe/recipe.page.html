@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Food Zone
+    </ion-title>
+    <ion-buttons slot='start'>
+      <ion-menu-button menu='side-menu'></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div style=" display: flex; align-items: center; justify-content: center;">
+  <app-full-recipe-item *ngIf="this.recipeService.getRecipe(this.id)" [recipe]="this.recipeService.getRecipe(this.id)"></app-full-recipe-item>
+  </div>
+
+</ion-content>
+

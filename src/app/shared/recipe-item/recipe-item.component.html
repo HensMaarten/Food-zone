@@ -1,0 +1,11 @@
+<ion-item>
+  <ion-card style="max-height: 800px; max-width: 800px;">
+    <ion-card-header>
+      <ion-card-title style="color: #A2D2FF;"> {{recipe.naam}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [alt]="recipe.naam" [src]="recipe.foto" class="img-responsive" style="margin-right: 30px;"/>
+      <ion-button *ngIf="recipe" [routerLink]="['recipe',recipe._id]" style=" display: flex; align-items: center; justify-content: center;" color="tertiary" shape="round">Lees het recept</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-item>

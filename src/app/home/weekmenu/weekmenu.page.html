@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Food Zone
+    </ion-title>
+    <ion-buttons slot='start'>
+      <ion-menu-button menu='side-menu'></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style=" margin-top: 25px; display: flex; align-items: center; justify-content: center;">
+    <ion-chip (click)="subtract()">
+      <ion-icon name="arrow-back-circle-outline" color="succes"></ion-icon>
+      <ion-label>Vorige</ion-label>
+    </ion-chip>
+    <ion-chip disabled="true">
+      <ion-icon name="calendar-number-outline" color="succes"></ion-icon>
+      <ion-label *ngIf="weekmenu">{{convertToDate(this.weekmenu[i].date)}}</ion-label>
+    </ion-chip>
+    <ion-chip (click)="add()">
+      <ion-icon name="arrow-forward-circle-outline" color="succes"></ion-icon>
+      <ion-label>Volgende</ion-label>
+    </ion-chip>
+  </div>
+  <div style=" margin-top: 25px; display: flex; align-items: center; justify-content: center;">
+    <div *ngIf="weekmenu">
+  <div *ngIf="weekmenu[i].dishId !== ''">
+    <app-recipe-item  *ngIf="weekmenu" [recipe]="recipeService.getRecipe(weekmenu[i].dishId)"> </app-recipe-item>
+  </div>
+    <ion-card *ngIf="weekmenu[i].dishId === ''">
+    <ion-card-header>
+      <ion-card-title> Nog geen gerecht gekozen? </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Ga snel op de receptenpagina kijken!</p>
+    </ion-card-content>
+    </ion-card>
+    </div>
+  </div>
+</ion-content>
+

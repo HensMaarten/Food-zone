@@ -1,0 +1,34 @@
+<ion-card style="max-width: 800px;">
+  <ion-card-header>
+    <ion-card-title style="color: #A2D2FF;"> {{recipe.naam}} </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <img [alt]="recipe.naam" [src]="recipe.foto" class="img-responsive" style="margin-right: 30px;">
+    <ion-row>
+      <ion-select *ngIf="recipe['Ingrediënten']" (ionChange)="changeAmount($event)"
+                  [value]="recipe.aantalPersonen">
+        <ion-select-option *ngFor="let nb of aantalPersonenOpties" [value]="nb">{{nb}}</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <h3>
+      Ingrediënten:
+    </h3>
+    <ion-list>
+      <li *ngFor=" let i of ingredients"> {{i.hoeveelheid + " " + i.eenheid + " " + i.naam}} </li>
+    </ion-list>
+    <ion-button (click)="writeToClipboard()" color="tertiary" shape="round">Kopieer ingredienten</ion-button>
+    <div *ngIf="authService.isLoggedIn()">
+    <ion-button  (click)="picker.open()" id="open-modal" color="tertiary" shape="round">Voeg toe aan weekmenu
+      <ion-icon name="calendar"></ion-icon>
+    </ion-button>
+    <ion-datetime (ionChange)="addMenuItem($event)" [min]="minDayString" [max]="maxDayString" #picker
+                  pickerFormat="DD MMMM YYYY"></ion-datetime>
+    </div>
+    <h3>
+      Bereidingswijze:
+    </h3>
+    <p>
+      {{recipe.bereidingswijze}}
+    </p>
+  </ion-card-content>
+</ion-card>
